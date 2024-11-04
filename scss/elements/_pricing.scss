@@ -1,0 +1,217 @@
+@use "../settings/all" as a;
+@use "../settings/_colors" as b;
+@import "../elements/mixins";
+
+.pricing {
+  margin: 100px auto;
+
+  @include laptop {
+    margin: 50px auto;
+  }
+}
+
+.pricing-title {
+  font-size: 36px;
+  color: b.$black;
+  font-family: a.$raleway;
+  text-align: center;
+
+  @include laptop {
+    margin-bottom: 14px;
+  }
+}
+
+.pricing-container {
+  margin-top: 71px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include laptop {
+    flex-direction: column;
+    margin: 50px auto;
+  }
+}
+
+.pricing-single {
+  width: 372px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  @include laptop {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 375px;
+    width: 100%;
+    margin-bottom: 50px;
+    padding: 25px 10px 0;
+  }
+}
+
+.pricing-header {
+  margin-top: 34px;
+
+  @include laptop {
+    width: 50%;
+    text-align: center;
+    margin: 0;
+  }
+}
+
+.pricing-limited {
+  text-align: center;
+  font-size: 12px;
+  font-family: a.$raleway;
+  color: #13253b;
+  margin-top: 15px;
+}
+
+.pricing-box-title {
+  font-size: 20px;
+  font-family: a.$raleway;
+  font-weight: bold;
+}
+
+.pricing-price {
+  font-size: 46px;
+  margin-top: 14px;
+  text-align: center;
+  font-weight: 300;
+}
+
+.pricing-list {
+  text-align: center;
+
+  @include laptop {
+    text-align: left;
+    width: 50%;
+  }
+}
+
+.price-element {
+  font-size: 14px;
+  color: b.$black;
+  margin-bottom: 20px;
+}
+
+.price-element::before {
+  content: "";
+  width: 11px;
+  height: 11px;
+  display: inline-block;
+  margin-right: 10px;
+  background-image: url(/assets/Ckechmark-1.svg);
+}
+
+.price-element-not::before {
+  background-image: url(/assets/Close.svg);
+}
+
+.price-element:last-of-type {
+  @include laptop {
+    margin-bottom: 0;
+  }
+}
+
+.pricing-button {
+  font-size: 13px;
+  font-weight: bold;
+  padding: 16px 57px;
+  position: relative;
+  bottom: -25px;
+}
+
+/*  */
+/* BASIC */
+/*  */
+.pricing-basic {
+  border: 1px solid b.$redish;
+}
+
+.pricing-basic .pricing-price {
+  color: b.$redish;
+}
+
+.pricing-basic .pricing-header {
+  margin-bottom: 69px;
+
+  @include laptop {
+    margin-bottom: 0;
+  }
+}
+
+.pricing-basic .pricing-list {
+}
+
+.pricing-basic-button {
+  background-color: b.$redish;
+}
+
+/*  */
+/* PROFESSIONAL */
+/* */
+.pricing-professional {
+  max-width: 405px;
+  border: 1px solid b.$primary;
+  box-shadow: 5px 10px 27px #07ace629;
+  margin: 0 40px;
+
+  @include laptop {
+    max-width: 420px;
+    margin: 0 0 50px;
+  }
+}
+
+.pricing-professional .pricing-header {
+  margin-bottom: 61px;
+
+  @include laptop {
+    margin-bottom: 0;
+  }
+}
+
+.pricing-professional .pricing-price {
+  color: b.$primary;
+}
+
+.pricing-professional .pricing-list {
+}
+
+.pricing-professional-button {
+  background-color: b.$primary;
+}
+
+/*  */
+/* PREMIUM */
+/*  */
+.pricing-premium {
+  border: 1px solid b.$green;
+
+  @include laptop {
+    margin-bottom: 0;
+  }
+}
+
+.pricing-premium .pricing-header {
+  margin-bottom: 50px;
+
+  @include laptop {
+    margin-bottom: 0;
+  }
+}
+
+.pricing-premium .pricing-price {
+  color: b.$green;
+}
+
+.pricing-premium .pricing-list {
+}
+
+.pricing-premium-button {
+  background-color: b.$green;
+}

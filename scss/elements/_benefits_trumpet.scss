@@ -1,0 +1,63 @@
+@use "../settings/all" as a;
+@use "../settings/_colors" as b;
+@import "../elements/mixins";
+
+.benefits-last {
+  display: flex;
+
+  @include laptop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+.benefits-trumpet {
+  width: 620px;
+  background-color: b.$white;
+  border: 1px solid #e8e9ed;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+
+  @include laptop {
+    width: auto;
+  }
+}
+
+.benefits-trumpet .benefits-description {
+  margin: 70px 35px;
+}
+
+.benefits-trumpet .benefits-description::after {
+  border-bottom: 4px solid b.$green;
+
+  @include laptop {
+    display: none;
+  }
+}
+
+.benefits-last .benefits-image {
+  flex: 1;
+  display: flex;
+  height: 370px;
+  align-items: center;
+  justify-content: center;
+  background-color: b.$green;
+  margin-left: 61px;
+  border-radius: 5px;
+
+  @include laptop {
+    img {
+      margin-top: 40px;
+    }
+  }
+
+  @include laptop {
+    flex: 1;
+    width: 100%;
+    margin-left: 0px;
+    margin-top: -10px;
+  }
+}

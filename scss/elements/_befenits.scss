@@ -1,0 +1,110 @@
+@use "../settings/all" as a;
+@use "../settings/_colors" as b;
+@import "../elements/mixins";
+
+.benefits {
+  padding: 100px 0;
+  background-color: b.$light-grey;
+
+  @include laptop {
+    padding: 50px 0;
+  }
+}
+
+.benefits-container {
+  padding: 0 100px;
+
+  @include laptop {
+    padding: 0 15px;
+  }
+}
+
+.benefits-elements {
+}
+
+.benefits-single {
+  background-color: b.$white;
+  border: 1px solid #e8e9ed;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 37px;
+}
+
+.benefits-description {
+  margin: 90px 36px;
+}
+
+.benefits-description::after {
+  content: "";
+  width: 328px;
+  border-bottom: 4px solid transparent;
+  display: flex;
+  margin-top: 50px;
+}
+
+.benefits-title {
+  font-size: 36px;
+  font-family: a.$raleway;
+  color: b.$black;
+
+  @include laptop {
+    font-size: 30px;
+  }
+}
+
+.benefits-text {
+  margin-top: 30px;
+  font-size: 16px;
+  color: b.$black;
+  line-height: 22px;
+  border-bottom: 4px solid transparent;
+
+  @include tablet {
+    font-size: 14px;
+  }
+}
+
+.benefits-image {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include laptop {
+    margin: 40px 0 0;
+  }
+}
+
+.benefits-image img {
+  position: relative;
+  z-index: 2;
+
+  @include laptop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 192px;
+  }
+}
+
+.benefits-description {
+  @include laptop {
+    margin: 30px 22px;
+  }
+}
+
+.benefits-image img {
+  @include laptop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 192px;
+  }
+}
+
+.benefits-last img {
+  width: 295px;
+  height: auto;
+}

@@ -1,0 +1,21 @@
+@use "../settings/all" as a;
+@use "../settings/_colors" as b;
+@import "../elements/mixins";
+
+body {
+  font-family: a.$open-sans;
+}
+
+.container {
+  max-width: 1352px;
+  margin: 0 auto;
+}
+
+.btn {
+  padding: 22px 157px;
+  background-color: transparent;
+  color: b.$white;
+  text-decoration: none;
+  border-radius: 40px;
+  box-shadow: b.$primary-shadow;
+}

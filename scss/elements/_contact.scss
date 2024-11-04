@@ -1,0 +1,77 @@
+@use "../settings/all" as a;
+@use "../settings/_colors" as b;
+@import "../elements/mixins";
+
+.contact {
+  padding: 80px 100px 100px;
+  display: flex;
+  justify-content: center;
+
+  @include laptop {
+    flex-direction: column;
+    padding: 44px 15px;
+  }
+}
+
+.contact-left-title {
+  font-size: 49px;
+  font-family: a.$raleway;
+  color: b.$black;
+
+  @include laptop {
+    font-size: 40px;
+  }
+}
+
+.contact-left,
+.contact-right {
+  width: 50%;
+}
+
+.contact-left {
+  @include laptop {
+    width: 100%;
+  }
+}
+
+.contact-right {
+  @include laptop {
+    width: 100%;
+  }
+}
+
+.contact-left-text {
+  margin: 22px 0 42px;
+}
+
+.contact-contact {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  @include laptop {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+.contact-details {
+  color: b.$grey;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.contact-details:first-of-type {
+  margin-right: 20px;
+}
+
+.contact-details img {
+  margin-right: 10px;
+}
+
+.contact-details:last-of-type {
+  @include laptop {
+    margin-bottom: 56px;
+  }
+}

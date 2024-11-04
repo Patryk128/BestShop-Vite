@@ -1,0 +1,104 @@
+@use "../settings/all" as a;
+@use "../settings/_colors" as b;
+@import "../elements/mixins";
+
+.burger {
+  width: 60px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  display: none;
+
+  strong {
+    position: absolute;
+    left: -99999px;
+  }
+
+  span {
+    width: 36px;
+    height: 5px;
+    background: b.$primary;
+  }
+}
+
+@include laptop {
+  .burger {
+    display: flex;
+    z-index: 3;
+  }
+
+  .header-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #fff;
+    width: 100%;
+    // height: 100%;
+    margin-top: 70px;
+    box-shadow: 2px 0 10px rgba(#000, 0.5);
+    transform: translateY(-200%);
+    transition: 0.3s linear;
+    z-index: 3;
+  }
+  .header-nav {
+    flex-direction: column;
+    padding: 30px;
+  }
+  .header-nav-element {
+    display: flex;
+    margin-right: auto;
+  }
+
+  .header-nav-element a {
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+  }
+
+  .header-nav-element:last-of-type a {
+    margin-bottom: 0;
+  }
+
+  .header-nav-element a:hover {
+    border-bottom: none;
+  }
+
+  body.show-menu {
+    .burger {
+      position: relative;
+
+      span:first-of-type {
+        display: none;
+      }
+      span {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
+      }
+      span:nth-of-type(2) {
+        rotate: 45deg;
+      }
+      span:nth-of-type(3) {
+        rotate: -45deg;
+      }
+    }
+    .header-menu {
+      transform: translateY(0);
+    }
+    .burger-blur:before {
+      content: "";
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(2px);
+      z-index: 3;
+    }
+  }
+}

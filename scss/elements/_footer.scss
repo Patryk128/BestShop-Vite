@@ -1,0 +1,61 @@
+@use "../settings/all" as a;
+@use "../settings/_colors" as b;
+@import "../elements/mixins";
+
+.footer {
+  box-shadow: 0px -5px 40px #00000029;
+  padding: 20px 0;
+
+  @include laptop {
+    padding: 20px 15px;
+  }
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.footer-logo {
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 30px;
+  color: b.$primary;
+  font-family: a.$raleway;
+
+  @include laptop {
+    padding-left: 15px;
+  }
+}
+.footer-text {
+  font-size: 11px;
+  line-height: 15px;
+  color: b.$grey;
+  margin-top: 6.5px;
+
+  @include laptop {
+    padding-left: 15px;
+  }
+}
+
+.footer-social img:first-of-type {
+  padding-right: 20px;
+}
+
+.footer-social {
+  @include laptop {
+    padding-right: 15px;
+  }
+}
+
+@include laptop {
+  .footer {
+    padding: 20px 15px;
+  }
+}

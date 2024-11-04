@@ -1,0 +1,66 @@
+@use "../settings/all" as a;
+@use "../settings/_colors" as b;
+@import "../elements/mixins";
+
+.benefits-iphone {
+  flex-direction: row-reverse;
+
+  @include laptop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+}
+
+.benefits-iphone img {
+  width: 426px;
+
+  @include laptop {
+    width: 175px;
+  }
+}
+
+.benefits-iphone .benefits-image {
+  margin-top: 29px;
+  margin-left: 70px;
+
+  @include laptop {
+    margin: 40px 0 0;
+  }
+}
+
+.benefits-iphone .benefits-description {
+  margin-top: 70px;
+
+  @include laptop {
+    margin: 30px 22px;
+  }
+}
+
+.benefits-iphone .benefits-image::before {
+  content: "";
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background-color: b.$primary;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: -20px;
+
+  @include laptop {
+    width: 130px;
+    height: 130px;
+    right: 5px;
+    top: -25px;
+  }
+}
+
+.benefits-iphone .benefits-description::after {
+  border-bottom: 4px solid b.$primary;
+
+  @include laptop {
+    display: none;
+  }
+}

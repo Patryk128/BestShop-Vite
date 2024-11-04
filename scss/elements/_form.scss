@@ -1,0 +1,85 @@
+@use "../settings/all" as a;
+@use "../settings/_colors" as b;
+@import "../elements/mixins";
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+
+  @include laptop {
+    padding: 0 15px;
+  }
+}
+
+.form-input:first-of-type {
+  margin-bottom: 42px;
+}
+
+.form-label {
+  text-transform: uppercase;
+  font-size: 11px;
+  color: b.$primary;
+  letter-spacing: 3px;
+  font-weight: bold;
+  line-height: 15px;
+}
+
+.form-control {
+  border: none;
+  border-bottom: 1px solid b.$grey;
+  line-height: 41px;
+}
+
+.form-input:last-of-type {
+  margin-top: 30px;
+}
+
+.form-check-text {
+  margin: 0 10px;
+  font-size: 12px;
+  color: b.$grey;
+  line-height: 17px;
+
+  @include laptop {
+    margin: 0;
+  }
+}
+
+.form-check {
+  display: flex;
+  gap: 10px;
+}
+
+.form-check-input {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 8px;
+  border: 1px solid rgba(209 209 209 / 1);
+  appearance: none;
+
+  @include laptop {
+    border-radius: 4px;
+  }
+}
+
+.form-check-input:checked {
+  background-image: url(/assets/Checkmark.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 12px;
+}
+
+.contact-button {
+  font-size: 13px;
+  font-weight: bold;
+  background-color: b.$primary;
+  padding: 20px 97px;
+  align-self: flex-end;
+  margin-top: 20px;
+}

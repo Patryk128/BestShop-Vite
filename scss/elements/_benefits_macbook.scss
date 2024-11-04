@@ -1,0 +1,56 @@
+@use "../settings/all" as a;
+@use "../settings/_colors" as b;
+@import "../elements/mixins";
+
+.benefits-macbook {
+  @include laptop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+}
+
+.benefits-macbook .benefits-description::after {
+  border-bottom: 4px solid b.$redish;
+
+  @include laptop {
+    display: none;
+  }
+}
+
+.benefits-macbook .benefits-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 117px;
+
+  @include laptop {
+    margin: 40px 0 0;
+  }
+}
+
+.benefits-macbook .benefits-image::before {
+  content: "";
+  width: 180px;
+  height: 180px;
+  background-color: b.$redish;
+  display: block;
+  position: absolute;
+  border-radius: 41px;
+  transform: rotate(45deg);
+  top: 55px;
+  right: -20px;
+
+  @include laptop {
+    width: 90px;
+    height: 90px;
+    right: 5px;
+    top: -25px;
+  }
+}
+
+.benefits-macbook img {
+  width: 386px;
+  height: auto;
+}

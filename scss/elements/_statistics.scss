@@ -1,0 +1,123 @@
+@use "../settings/all" as a;
+@use "../settings/_colors" as b;
+@import "../elements/mixins";
+
+.statistic {
+  margin-top: 100px;
+
+  @include tablet {
+    margin-top: 50px;
+  }
+}
+
+.statistic-title {
+  text-align: center;
+  font-size: 36px;
+  color: b.$black;
+  font-family: a.$raleway;
+
+  @include tablet {
+    font-size: 30px;
+    padding: 0 36px;
+  }
+}
+
+.statistic-container {
+  max-width: 770px;
+  margin: 100px auto;
+  display: flex;
+  justify-content: space-between;
+
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+    margin: 25px;
+  }
+}
+
+.statistic-element {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+
+  @include tablet {
+    margin-top: 25px;
+  }
+}
+
+.statistic-circle {
+  height: 63px;
+  width: 63px;
+  border-radius: 50%;
+  background-color: transparent;
+  position: relative;
+}
+
+.statistic-icon {
+  position: absolute;
+}
+
+.statistic-number {
+  margin-top: 14px;
+  font-size: 20px;
+  font-family: a.$raleway;
+  color: b.$black;
+  letter-spacing: 5.96px;
+  font-weight: 800;
+}
+
+.statistic-comment {
+  margin-top: 19px;
+  color: b.$grey;
+  font-size: 17px;
+  font-family: a.$raleway;
+  display: flex;
+  justify-content: flex-start;
+  text-align: center;
+}
+
+.statistic-element:nth-child(1) {
+  .statistic-circle {
+    background-color: b.$redish;
+  }
+}
+
+.statistic-element:nth-child(1) {
+  .statistic-icon {
+    left: 50%;
+  }
+}
+
+.statistic-element:nth-child(2) {
+  .statistic-circle {
+    background-color: b.$primary;
+  }
+}
+
+.statistic-element:nth-child(2) {
+  .statistic-icon {
+    top: 20%;
+    left: 35%;
+  }
+}
+
+.statistic-element:nth-child(3) {
+  .statistic-circle {
+    background-color: b.$green;
+  }
+}
+
+.statistic-element:nth-child(3) {
+  .statistic-icon {
+    top: 10%;
+    left: 50%;
+  }
+}
+
+.statistic-element:first-of-type {
+  @include tablet {
+    margin-top: 0;
+  }
+}
